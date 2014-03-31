@@ -6,8 +6,8 @@
 ?>
 
 <?php get_header(); ?>
+
 <?php $status = get_terms('shop_order_status'); ?>
-<pre>
 <?php 
     $args = array(
       'post_type' => 'shop_order',
