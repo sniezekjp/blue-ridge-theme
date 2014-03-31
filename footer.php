@@ -1,6 +1,3 @@
-		
-		<?php if(is_super_admin()) echo "<h1>Hello github!</h1>"?>
-
 		</div>
 	</div>
 	<?php global $data; ?>
