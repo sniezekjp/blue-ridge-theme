@@ -1,0 +1,13 @@
+#login h1{
+}
+#login h1 a{
+	background: url('http://blueridgebasketballcamp.com/wp-content/uploads/sites/10/2013/09/blue-ridge-logo-e1379187487993.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	height: 30px;
+
+}
+
+#login h1 a:hover{
+	color: #333; 
+}
