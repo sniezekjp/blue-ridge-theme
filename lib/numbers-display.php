@@ -40,8 +40,8 @@ function display_camp_numbers(){
     <h3><?php echo $camp; ?></h3>
     <table>
       <tr>
-        <th>Grade</th>
-        <th>Count</th>
+        <td><strong>Grade</strong></td>
+        <td><strong>Count</strong></td>
       </tr>
       <?php foreach($grades as $grade => $count) : ?>
         <tr>
