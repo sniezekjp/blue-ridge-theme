@@ -9,7 +9,7 @@ function export_players(){
     header("Expires: 0");
 
     echo "record1,record2,record3\n";
-    return; 
+    exit();
   }
 }
 
