@@ -36,7 +36,18 @@ function display_camp_numbers(){
 ?>
 
 <h1>Camp Numbers</h1>
-
+<table>
+  <tr>
+    <th>Camp</th>
+    <th>Grade</th>
+    <th>Count</th>
+  </tr>
+  <tr>
+    <td>Boys</td>
+    <td>1</td>
+    <td>12</td>
+  </tr>
+</table>
 
 
 <?php
