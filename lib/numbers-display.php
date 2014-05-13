@@ -28,6 +28,8 @@ function display_camp_numbers(){
   // var_dump($camps);
   // var_dump($grades);
    var_dump($players);
+   $terms = get_post_terms($players[0]->ID, array('camp', 'grade'), array('fields'=> 'names'))
+   var_dump($terms);
 
   $data = array();
   foreach($camps as $camp){
