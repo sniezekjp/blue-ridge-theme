@@ -1,6 +1,6 @@
 <?php
 
-add_action('init', 'export_players')
+add_action('init', 'export_players');
 function export_players(){
   if($_GET['export']){
     header("Content-type: text/csv");
