@@ -4,7 +4,7 @@ add_action('init', 'export_players');
 function export_players(){
   if($_GET['export']){
     header("Content-type: text/csv");
-    header("Content-Disposition: attachment; filename=file.csv");
+    header("Content-Disposition: attachment; filename=players.csv");
     header("Pragma: no-cache");
     header("Expires: 0");
     $players = get_posts(array(
