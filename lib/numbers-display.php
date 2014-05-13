@@ -26,7 +26,7 @@ function display_camp_numbers(){
           'camp'=> $camp->slug,
           'grade'=> $grade->slug
         ));
-        $data[$camp->slug][$grade->slug] = count($players);     
+        $data[$camp->name][$grade->slug] = count($players);     
     }
   }
 
@@ -36,18 +36,22 @@ function display_camp_numbers(){
 ?>
 
 <h1>Camp Numbers</h1>
-<table>
-  <tr>
-    <th>Camp</th>
-    <th>Grade</th>
-    <th>Count</th>
-  </tr>
-  <tr>
-    <td>Boys</td>
-    <td>1</td>
-    <td>12</td>
-  </tr>
-</table>
+  <?php foreach($data as $camp => $grades) : ?>
+    <h3><?php echo $camp; ?></h3>
+    <table>
+      <tr>
+        <th>Grade</th>
+        <th>Count</th>
+      </tr>
+      <?php foreach($grades as $grade => $count) : ?>
+        <tr>
+          <td><?php echo $grade; ?></td>
+          <td><?php echo $count; ?></td>
+        </tr>
+      <?php endforeach; ?>
+    </table>
+  <?php endforeach; ?>
+
 
 
 <?php
