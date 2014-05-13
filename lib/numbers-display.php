@@ -7,8 +7,29 @@ function export_players(){
     header("Content-Disposition: attachment; filename=file.csv");
     header("Pragma: no-cache");
     header("Expires: 0");
+    $players = get_posts(array(
+      'posts_per_page' => -1, 
+      'post_type' => 'player'
+    ));
+    foreach($players as $player){
+      $id = $player->ID; 
 
-    echo "record1,record2,record3\n";
+     $terms = wp_get_post_terms($players[0]->ID, array('camp', 'grade'), array('fields'=> 'names')); 
+
+      //player name     
+      echo $player->post_title . ',';
+
+      //camp and grade
+      echo $terms[0] . ',';
+      echo $terms[1] . ',';
+
+      //contact
+      echo get_post_meta($id, 'guardian') . ',';
+      echo get_post_meta($id, 'guardian_phone') . ',';
+      echo get_post_meta($id, 'guardian_email') . ',' 
+      echo "\n";
+    }
+    //echo "record1,record2,record3\n";
     exit();
   }
 }
