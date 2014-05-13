@@ -1,7 +1,7 @@
 <?php
 
 //numbers display function
-require('numbers-display.php')
+require('numbers-display.php');
 
 
 add_action( 'admin_menu', 'get_emails' );
