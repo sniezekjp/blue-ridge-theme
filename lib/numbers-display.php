@@ -14,7 +14,7 @@ function export_players(){
     foreach($players as $player){
       $id = $player->ID; 
 
-     $terms = wp_get_post_terms($id, array('camp', 'grade')); 
+     $terms = wp_get_post_terms($id, array('camp', 'grade', 'size')); 
 
       //player name     
       echo $player->post_title . ',';
@@ -28,6 +28,9 @@ function export_players(){
         echo $terms[0]->name . ',';
         echo $terms[1]->name . ',';
       }
+
+      $echo $terms[2]->name . ',';
+
 
       //contact
       echo get_post_meta($id, 'guardian', true) . ',';
