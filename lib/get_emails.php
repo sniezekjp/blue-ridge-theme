@@ -3,7 +3,7 @@
 add_action( 'admin_menu', 'get_emails' );
 function get_emails(){
         
-        qadd_menu_page( 'Camp Settings', 'Camp Settings', 'shop_manager', 'camp_settings', 'display_camp_settings', '', '2.5' );
+        add_menu_page( 'Camp Settings', 'Camp Settings', 'shop_manager', 'camp_settings', 'display_camp_settings', '', '2.5' );
         
         add_submenu_page( 'camp_settings','Get Emails', 'Emails', 'shop_manager', 'camp_emails', 'display_camp_emails', '', '2.5' );
 
