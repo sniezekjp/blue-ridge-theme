@@ -14,22 +14,17 @@ function export_players(){
     foreach($players as $player){
       $id = $player->ID; 
 
-     $terms = wp_get_post_terms($id, array('camp', 'grade', 'size')); 
+     $camp = wp_get_post_terms($id, array('camp')); 
+     $grade = wp_get_post_terms($id, array('grade')); 
+     $size = wp_get_post_terms($id, array('size')); 
 
       //player name     
       echo $player->post_title . ',';
 
-      //camp and grade
-      if($terms[1]->name == 'Kindergarten'){
-        echo $terms[1]->name . ',';
-        echo $terms[0]->name . ',';
-      }
-      else{
-        echo $terms[0]->name . ',';
-        echo $terms[1]->name . ',';
-      }
-
-      echo $terms[2]->name . ',';
+      //camp and grade and size
+      echo $camp[0]->name . ',';
+      echo $grade[0]->name . ',';
+      echo $size[0]->name . ',';
 
 
       //contact
