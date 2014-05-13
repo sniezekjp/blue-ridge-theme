@@ -27,7 +27,7 @@ function display_camp_numbers(){
 
   // var_dump($camps);
   // var_dump($grades);
-  // var_dump($players);
+   var_dump($players);
 
   $data = array();
   foreach($camps as $camp){
