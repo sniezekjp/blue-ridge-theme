@@ -20,8 +20,14 @@ function export_players(){
       echo $player->post_title . ',';
 
       //camp and grade
-      echo $terms[0]->name . ',';
-      echo $terms[1]->name . ',';
+      if($terms[1]->name == 'Kindergarten'){
+        echo $terms[1]->name . ',';
+        echo $terms[0]->name . ',';
+      }
+      else{
+        echo $terms[0]->name . ',';
+        echo $terms[1]->name . ',';
+      }
 
       //contact
       echo get_post_meta($id, 'guardian', true) . ',';
