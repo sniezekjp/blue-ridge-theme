@@ -1,8 +1,12 @@
 <?php
 add_action( 'admin_menu', 'get_emails' );
 function get_emails(){
-        add_menu_page( 'Camp Settings', 'Camp Settings', 'shop_manager', 'camp_settings', 'display_camp_settings', '', '2.5' );
+        
+        qadd_menu_page( 'Camp Settings', 'Camp Settings', 'shop_manager', 'camp_settings', 'display_camp_settings', '', '2.5' );
+        
         add_submenu_page( 'camp_settings','Get Emails', 'Emails', 'shop_manager', 'camp_emails', 'display_camp_emails', '', '2.5' );
+
+        add_submenu_page( 'camp_settings','Camp numbers', 'Camp Numbers', 'shop_manager', 'camp_emails', 'display_camp_emails', '', '2.5' );        
 }
 
 function display_camp_settings(){ 
@@ -74,7 +78,9 @@ function display_camp_emails(){
         }
         $list = implode(', ', array_unique($email_list)); 
         ?>
-        <textarea name="list" id="list" cols="30" rows="10"><?php echo $list; ?></textarea>
+        <textarea name="list" id="list" cols="30" rows="10">
+        <?php echo $list; ?>
+        </textarea>
         <?php
     }
     ?>
