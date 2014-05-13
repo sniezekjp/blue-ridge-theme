@@ -24,7 +24,7 @@ function display_camp_numbers(){
           'posts_per_page' => -1, 
           'post_type' => 'player',
           'camp'=> $camp->slug,
-          'grade'=> $grades->slug
+          'grade'=> $grade->slug
         ));
         $data[$camp->slug][$grade->slug] = count($players);     
     }
