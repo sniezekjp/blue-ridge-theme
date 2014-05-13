@@ -1,4 +1,5 @@
 <?php
+
 add_action( 'admin_menu', 'get_emails' );
 function get_emails(){
         
@@ -6,7 +7,7 @@ function get_emails(){
         
         add_submenu_page( 'camp_settings','Get Emails', 'Emails', 'shop_manager', 'camp_emails', 'display_camp_emails', '', '2.5' );
 
-        add_submenu_page( 'camp_settings','Camp numbers', 'Camp Numbers', 'shop_manager', 'camp_numbers', 'display_camp_emails', '', '3' );        
+        add_submenu_page( 'camp_settings','Camp numbers', 'Camp Numbers', 'shop_manager', 'camp_numbers', 'display_camp_emails' );        
 }
 
 function display_camp_settings(){ 
