@@ -32,7 +32,7 @@ function export_players(){
       echo get_post_meta($id, 'guardian_phone', true) . ',';
       echo get_post_meta($id, 'guardian_email', true) . ',';
       $info = get_post_meta($id, 'medical_info', true);
-      $info = str_replace("\n", " ", $info);
+      //$info = str_replace("\n", " ", $info);
       echo '"' . $info . '",'; 
  
       //new line
