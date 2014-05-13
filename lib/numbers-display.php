@@ -26,7 +26,7 @@ function display_camp_numbers(){
           'camp'=> $camp->slug,
           'grade'=> $grade->slug
         ));
-        $data[$camp->name][$grade->slug] = count($players);     
+        $data[$camp->name][$grade->name] = count($players);     
     }
   }
 
