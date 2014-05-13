@@ -37,7 +37,7 @@ function display_camp_numbers(){
 
 <h1>Camp Numbers</h1>
 
-<p><a href="#">Click here to export player data</a></p>
+<p><a href="?page=camp_numbers&export=true">Click here to export player data</a></p>
 
   <?php foreach($data as $camp => $grades) : ?>
     <h3><?php echo $camp; ?></h3>
