@@ -27,6 +27,9 @@ function export_players(){
       echo get_post_meta($id, 'guardian', true) . ',';
       echo get_post_meta($id, 'guardian_phone', true) . ',';
       echo get_post_meta($id, 'guardian_email', true) . ',';
+      echo get_post_meta($id, 'medical_info', true) . ',';
+
+      //new line
       echo "\n";
     }
     //echo "record1,record2,record3\n";
