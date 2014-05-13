@@ -3,6 +3,10 @@
 //Camp numbers submenu display
 function display_camp_numbers(){ 
   
+  if($_GET['export']){
+    echo "HI";
+    return; 
+  }
   echo '<pre>';
   $camps = get_terms(array('camp'));
   $grades = get_terms(array('grade'));
