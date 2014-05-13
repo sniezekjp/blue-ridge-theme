@@ -13,9 +13,26 @@ function display_camp_numbers(){
       'grade'=> $grades[0]->slug
     ));
 
-  var_dump($camps);
-  var_dump($grades);
-  var_dump($players);
+  // var_dump($camps);
+  // var_dump($grades);
+  // var_dump($players);
+
+  $data = array();
+  foreach($camps as $camp){
+    foreach($grades as $grade){
+        $players = get_posts(array(
+          'posts_per_page' => -1, 
+          'post_type' => 'player',
+          'camp'=> $camp->slug,
+          'grade'=> $grades->slug
+        ));
+        $data[$camp->slug][$grade->slug] = count($players);     
+    }
+  }
+
+  var_dump($data);
+
+  echo '</pre>';
 ?>
 
 <h1>Camp Numbers</h1>
