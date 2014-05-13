@@ -29,7 +29,7 @@ function export_players(){
         echo $terms[1]->name . ',';
       }
 
-      $echo $terms[2]->name . ',';
+      echo $terms[2]->name . ',';
 
 
       //contact
