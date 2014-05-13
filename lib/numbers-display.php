@@ -4,7 +4,12 @@
 function display_camp_numbers(){ 
   
   if($_GET['export']){
-    echo "HI";
+    header("Content-type: text/csv");
+    header("Content-Disposition: attachment; filename=file.csv");
+    header("Pragma: no-cache");
+    header("Expires: 0");
+
+    echo "record1,record2,record3\n";
     return; 
   }
   echo '<pre>';
