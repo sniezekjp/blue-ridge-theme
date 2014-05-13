@@ -1,8 +1,7 @@
 <?php
 
-//Camp numbers submenu display
-function display_camp_numbers(){ 
-  
+add_action('init', 'export_players')
+function export_players(){
   if($_GET['export']){
     header("Content-type: text/csv");
     header("Content-Disposition: attachment; filename=file.csv");
@@ -12,6 +11,10 @@ function display_camp_numbers(){
     echo "record1,record2,record3\n";
     return; 
   }
+}
+
+//Camp numbers submenu display
+function display_camp_numbers(){ 
   echo '<pre>';
   $camps = get_terms(array('camp'));
   $grades = get_terms(array('grade'));
