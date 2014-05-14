@@ -20,9 +20,10 @@ function export_players(){
 
       //player name
       $names = explode(' ', $player->post_title);
+      $lastIndex = count($names) - 1;
       
-      echo $names[0] . ',';
-      echo $names[1] . ',';
+      echo $player->post_title . ',';
+      echo $names[$lastIndex] . ',';
 
       //camp and grade and size
       echo $camp[0]->name . ',';
