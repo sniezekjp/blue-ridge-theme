@@ -2,7 +2,7 @@
 
 <?php
 	if(is_super_admin()){
-		echo do_shortcode('[alert type="info"]Registration is closed for the 4-7th grade boy\'s camp in July.[/alert]');
+		echo do_shortcode('[alert type="notice"]Registration is closed for the 4-7th grade boy\'s camp in July.[/alert]');
 	}
 ?>
 
