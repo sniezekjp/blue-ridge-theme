@@ -23,7 +23,11 @@ function export_players(){
       $lastIndex = count($names) - 1;
       
       echo $player->post_title . ',';
-      echo $names[$lastIndex] . ',';
+
+      if($names[$lastIndex] == 'Jr.')
+        echo $names[$lastIndex - 1] . ',';
+      else
+        echo $names[$lastIndex] . ','
 
       //camp and grade and size
       echo $camp[0]->name . ',';
