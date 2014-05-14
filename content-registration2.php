@@ -1,4 +1,11 @@
 <h1>Registration Information</h1>
+
+<?php
+	if(is_super_admin()){
+		echo do_shortcode('[alert type="info"]Registration is closed for the 4-7th grade boy\'s camp in July.[/alert]');
+	}
+?>
+
 <form action="" id="registration_form" method="post">
 <?php 
 	global $registration_errors; 
