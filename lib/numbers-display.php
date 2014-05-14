@@ -18,8 +18,11 @@ function export_players(){
      $grade = wp_get_post_terms($id, array('grade')); 
      $size = wp_get_post_terms($id, array('size')); 
 
-      //player name     
-      echo $player->post_title . ',';
+      //player name
+      $names = explode(' ', $player->post_title);
+      
+      echo $names[0] . ',';
+      echo $names[1] . ',';
 
       //camp and grade and size
       echo $camp[0]->name . ',';
