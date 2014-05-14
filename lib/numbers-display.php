@@ -22,8 +22,13 @@ function export_players(){
       $names = explode(' ', trim($player->post_title));
       $lastIndex = count($names) - 1;
       
+      //full name
       echo $player->post_title . ',';
 
+      //first name
+      echo $names[0] . ',';
+
+      //last name
       if($names[$lastIndex] == 'Jr.')
         echo $names[$lastIndex - 1] . ',';
       else
