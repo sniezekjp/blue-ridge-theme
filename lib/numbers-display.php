@@ -19,7 +19,7 @@ function export_players(){
      $size = wp_get_post_terms($id, array('size')); 
 
       //player name
-      $names = explode(' ', $player->post_title);
+      $names = explode(' ', trim($player->post_title));
       $lastIndex = count($names) - 1;
       
       echo $player->post_title . ',';
