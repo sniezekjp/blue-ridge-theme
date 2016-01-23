@@ -94,6 +94,8 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', $woocommerce-
 		$( '.product-thumbnail a, .product-info a' ).live('click', function(e){
 			e.preventDefault(); 
 		});
+		$("#billing_email").val(session[1].guardian_email);
+		$("#billing_phone").val(session[1].guardian_phone);
 	})(jQuery)
 </script>
 

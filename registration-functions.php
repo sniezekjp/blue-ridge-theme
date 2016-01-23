@@ -12,6 +12,9 @@ function under_construction(){
 
 add_shortcode( 'br_registration', 'do_br_registration' );
 function do_br_registration( $atts, $content = null ){
+//    if(!is_super_admin()) {
+//        return "<p>Under construction</p>";
+//    }
 	ob_start(); 
 	get_template_part( 'content', 'registration2' );
 	$contents = ob_get_contents();
@@ -88,8 +91,8 @@ function br_submit_registration(){
 		global $woocommerce;
 		
 		$lower_fee = 4262; 
-		$upper_fee = 4254; 	
-		$k_3_8_1 = 4955; 			
+		$upper_fee = 4254;
+		$prep_fee = 5551;
 		
 		if( isset( $_POST['br_register'] ) && 'br_registration' == $_POST['br_register'] ){
 						
@@ -107,7 +110,17 @@ function br_submit_registration(){
 				 	return; 
 				 
 				 foreach( $_POST['camper'] as $player ){
-					 if( $player['grade'] >= 4 ){
+					$isPrep = strpos($player['grade'], 'prep');
+					if($isPrep !== false) {
+						foreach($player['camp'] as $camp){
+                            if(strpos($camp, 'prep') !== false) {
+                                $woocommerce->cart->add_to_cart($prep_fee);
+                            } else {
+                                $woocommerce->cart->add_to_cart( $upper_fee );
+                            }
+						}
+					}
+					else if( $player['grade'] >= 4){
 					 	foreach( $player['camp'] as $camp ){
 							 $woocommerce->cart->add_to_cart( $upper_fee ); 
 						}
@@ -146,7 +159,7 @@ function is_registration_error(){
 			}			
 			
 			if( '' == $player['size'] ){
-				$registration_errors['errors'] = 'error';
+				//$registration_errors['errors'] = 'error';
 			}			
 			
 			if( 0 == count( $player['camp'] ) ){
@@ -197,7 +210,7 @@ function get_player_options( $tax, $slug = null ){
 }
 
 function get_player_camps( $id, $camps = array() ){
-	$terms = get_terms( array('camp'), array('hide_empty' => false) );
+	$terms = get_terms( array('camp'), array('hide_empty' => false, 'orderby'=>'id') );
 	$max   = get_option('camp_max');
 	foreach( $terms as $term ){
 	    $show = '';

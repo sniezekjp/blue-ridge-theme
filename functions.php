@@ -6,6 +6,31 @@ require( 'portfolio-js.php' );
 require( 'woocommerce/woo-emails.php' ); 
 require( 'lib/get_emails.php' );
 
+add_filter( 'woocommerce_before_checkout_billing_form' , 'custom_override_checkout_fields',1000 );
+
+// Our hooked in function - $fields is passed via the filter!
+function custom_override_checkout_fields( $checkout ) {
+file_put_contents('override.txt', json_encode($checkout, JSON_PRETTY_PRINT));
+global $woocommerce;     
+$fields = $checkout->checkout_fields;
+//$fields['billing']['billing_email']['value'] = $woocommerce->session->player_info['guardian_email'];
+$fields['billing']['billing_email']['value'] = "billing@email.com";
+$fields['billing']['billing_phone']['value'] = $woocommerce->session->player_info['guardian_phone'];
+     return $fields;
+}
+
+
+// Enqueued script with localized data.
+//wp_enqueue_script( 'jquery' );
+
+function themeslug_enqueue_script() {
+global $woocommerce;
+wp_localize_script( 'jquery', 'session', $woocommerce->session->player_info );
+}
+
+//add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_style' );
+add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_script' );
+
 add_action( 'init', 'reset_cart' ); 
 function reset_cart(){	
 	if( isset( $_GET['reset'] ) ){

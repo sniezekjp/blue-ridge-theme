@@ -39,7 +39,7 @@
 		<td>Rising Grade</td>
 		<td><select name="camper[<?php echo $id; ?>][grade]" id="" class="select"><?php get_player_options('grade', $data['grade']); ?></select></td>
 	</tr>
-	<tr>
+	<tr style="display:none;">
 		<td>T-Shirt Size</td>
 		<td><select name="camper[<?php echo $id;?>][size]" id="" class="select"><?php get_player_options('size', $data['size']); ?></select></td>
 	</tr>

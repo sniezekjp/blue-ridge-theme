@@ -14,7 +14,7 @@
 		<td><h3>Name</h3></td>
 		<td><h3>Rising Grade</h3></td>
 		<td><h3>Camps</h3></td>
-		<td><h3>Size</h3></td>
+		<td style="display:none;"><h3>Size</h3></td>
 		<td><h3>Medical</h3></td>
 		<td><h3>Contact</h3></td>
 	</tr>
@@ -32,7 +32,7 @@
 			<td><p><?php echo $player['name']; ?></p></td>
 			<td><p><?php echo $grade->name;    ?></p></td>
 			<td><p><?php display_camps($camps);    ?></p></td>
-			<td><p><?php echo $size->name;     ?></p></td>
+			<td style="display:none;"><p><?php echo $size->name;     ?></p></td>
 			<td><p><?php echo $player['medical']; ?></p></td>
 			<td><p><?php echo $player['guardian'] . '<br />' . $player['guardian_email'] . '<br />' . $player['guardian_phone']; ?></p></td>
 		</tr>
