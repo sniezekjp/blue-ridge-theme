@@ -36,7 +36,7 @@ function display_camp_settings(){
         </tr>
         <?php foreach($terms as $camp) : ?>
             <?php 
-                $inTheRightYear = strpos($term->name, '2016');
+                $inTheRightYear = strpos($camp->name, '2016');
                 if($inTheRightYear === false) {
                     continue;
                 }
