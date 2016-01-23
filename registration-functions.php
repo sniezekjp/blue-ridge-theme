@@ -236,7 +236,7 @@ padding-left: 20px;"> ('.$limit.' spots left)</span>';
 			$inTheRightYear = strpos($term->name, $year);
 
 			if($inTheRightYear === false) {
-				echo '';
+				continue;
 			}
 
             if($limit == 0 || $limit < 0){
