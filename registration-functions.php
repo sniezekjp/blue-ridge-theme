@@ -239,7 +239,7 @@ padding-left: 20px;"> ('.$limit.' spots left)</span>';
 			echo $year;
 
 			if($inTheRightYear === false) {
-				return;
+				echo '';
 			}
 
             if($limit == 0 || $limit < 0){
