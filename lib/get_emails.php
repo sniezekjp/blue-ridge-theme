@@ -35,6 +35,12 @@ function display_camp_settings(){
             <td><h4>Spots available for each camp</h4></td>
         </tr>
         <?php foreach($terms as $camp) : ?>
+            <?php 
+                $inTheRightYear = strpos($term->name, '2016');
+                if($inTheRightYear === false) {
+                    continue;
+                }
+            ?>
             <tr>
                 <td><?php echo $camp->name; ?></td>
                 <td><input type="text" name="camp_max[<?php echo $camp->slug?>]" value="<?php 
