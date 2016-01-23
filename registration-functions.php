@@ -215,6 +215,7 @@ function get_player_camps( $id, $camps = array() ){
 	foreach( $terms as $term ){
 	    $show = '';
 	    $limit = 1;
+	    $year = '2016';
 		if( in_array($term->slug, $camps) )
 			$checked = 'checked="checked"';
 		else
@@ -232,6 +233,12 @@ padding-left: 20px;"> ('.$limit.' spots left)</span>';
     			}
 			}
 			
+			$inTheRightYear = strpos($term->name, $year);
+
+			if($inTheRightYear === false) {
+				return;
+			}
+
             if($limit == 0 || $limit < 0){
                 $html = $term->name . ' (FULL) <br />';
             }
