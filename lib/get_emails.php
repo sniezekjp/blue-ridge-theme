@@ -15,7 +15,7 @@ function get_emails(){
 }
 
 function display_camp_settings(){ 
-    $terms = get_terms(array('camp'));    
+    $terms = get_terms(array('camp'), array('hide_empty' => 0));
     echo '<pre>';
     if(isset($_POST['max'])){
         update_option('camp_max', $_POST['camp_max']);
