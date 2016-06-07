@@ -240,7 +240,7 @@ padding-left: 20px;"> ('.$limit.' spots left)</span>';
 			}
 
             if($limit == 0 || $limit < 0){
-                $html = $term->name . ' (FULL) <br />';
+                $html = $term->name . ' (Sold Out) <br />';
             }
 			else{
                 $html  = '<input type="checkbox" name="camper['.$id.'][camp][]" ';
