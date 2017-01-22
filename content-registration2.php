@@ -48,6 +48,13 @@
 		<td><textarea class="input-text" name="camper[<?php echo $id; ?>][medical]" id="" cols="30" rows="10"><?php echo $data['medical'] ? $data['medical'] : 'None'; ?></textarea></td>
 	</tr>
 	<tr>
+		<td>Aftercare</td>
+		<td>
+			<input type="checkbox" name"camper[<?php echo $id;?>][aftercare]" id="aftercare-<?php echo $id;?>">
+			<label for="aftercare-<?php echo $id;?>">Needs after care from 2:30-3:30pm ($10)</label>
+		</td>
+	</tr>
+	<tr>
 		<td><h3>Parent/Guardian Information</h3></td>
 		<td></td>
 	</tr>
