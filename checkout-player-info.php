@@ -33,7 +33,7 @@
 			<td><p><?php echo $player['name']; ?></p></td>
 			<td><p><?php echo $grade->name;    ?></p></td>
 			<td><p><?php display_camps($camps);    ?></p></td>
-			<td><p><?php echo $player['aftercare'] ? 'Yes' : 'No';?></p></td>
+			<td><p><?php echo $player['aftercare']; ?> <?php echo $player['aftercare'] ? 'Yes' : 'No';?></p></td>
 			<td style="display:none;"><p><?php echo $size->name;     ?></p></td>
 			<td><p><?php echo $player['medical']; ?></p></td>
 			<td><p><?php echo $player['guardian'] . '<br />' . $player['guardian_email'] . '<br />' . $player['guardian_phone']; ?></p></td>
