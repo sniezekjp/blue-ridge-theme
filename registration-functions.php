@@ -93,6 +93,7 @@ function br_submit_registration(){
 		$lower_fee = 4262; 
 		$upper_fee = 4254;
 		$prep_fee = 5551;
+		$aftercare = 6529;
 		
 		if( isset( $_POST['br_register'] ) && 'br_registration' == $_POST['br_register'] ){
 						
@@ -130,6 +131,9 @@ function br_submit_registration(){
 							 $woocommerce->cart->add_to_cart( $lower_fee ); 
 						}						 
 					 }
+					if($player['aftercare']) {
+						$woocommerce->cart->add_to_cart( $aftercare );
+					}
 				 }
 				 
 				 wp_redirect( home_url('/review-pay') ); exit;
@@ -215,7 +219,7 @@ function get_player_camps( $id, $camps = array() ){
 	foreach( $terms as $term ){
 	    $show = '';
 	    $limit = 1;
-	    $year = '2016';
+	    $year = '2017';
 		if( in_array($term->slug, $camps) )
 			$checked = 'checked="checked"';
 		else
