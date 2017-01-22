@@ -111,6 +111,7 @@ function br_submit_registration(){
 				 	return; 
 				 
 				 foreach( $_POST['camper'] as $player ){
+				 	var_dump($player);
 					$isPrep = strpos($player['grade'], 'prep');
 					if($isPrep !== false) {
 						foreach($player['camp'] as $camp){
@@ -292,7 +293,8 @@ function register_campers( $order_id ){
 
 			$id = wp_insert_post($data);			
 			update_post_meta( $id, 'order_id', $order_id ); 
-			update_post_meta( $id, 'medical_info', $player['medical'] ); 
+			update_post_meta( $id, 'medical_info', $player['medical'] );
+			update_post_meta( $id, 'aftercare', $player['aftercare'] );
 			update_post_meta( $id, 'guardian', $player['guardian'] );
 			update_post_meta( $id, 'guardian_email', $player['guardian_email'] );
 			update_post_meta( $id, 'guardian_phone', $player['guardian_phone'] );
