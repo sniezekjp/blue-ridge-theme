@@ -214,7 +214,7 @@ function get_player_options( $tax, $slug = null ){
 }
 
 function get_player_camps( $id, $camps = array() ){
-	$terms = get_terms( array('camp'), array('hide_empty' => false, 'orderby'=>'id') );
+	$terms = get_terms( array('camp'), array('hide_empty' => false, 'orderby'=>'slug') );
 	$max   = get_option('camp_max');
 	foreach( $terms as $term ){
 	    $show = '';
