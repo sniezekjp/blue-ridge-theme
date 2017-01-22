@@ -134,6 +134,7 @@ function my_edit_player_columns( $columns ) {
 		'grade' => __( 'Grade' ),
 		'camp' => __( 'Camp' ),
 		'size' => __( 'T-Shirt Size' ),
+		'aftercare' => __( 'Aftercare' ),
 		'medical' => __( 'Medical Info' ),
 		'guardian' => __( 'Emergency Contact' ),
 		'order_id' => __( 'Order ID' ),
@@ -176,7 +177,10 @@ function do_manage_player_cols( $col, $post_id ){
 				break; 
 			case "medical" :
 				echo get_post_meta( $post_id, 'medical_info', true ); 
-				break; 
+				break;
+			case "aftercare" :
+				echo get_post_meta( $post_id, 'aftercare', true ); 
+				break;				 
 			case "guardian" :
 				echo get_post_meta( $post_id, 'guardian', true ) . '<br />'; 
 				echo get_post_meta( $post_id, 'guardian_email', true ) . '<br />';
