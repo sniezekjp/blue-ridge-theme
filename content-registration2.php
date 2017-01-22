@@ -50,7 +50,8 @@
 	<tr>
 		<td>Needs aftercare from 2:30-3:30pm ($10)</td>
 		<td>
-			<input type="checkbox" value="yes" name="camper[<?php echo $id;?>][aftercare]" id="aftercare-<?php echo $id;?>">
+			<?php $checked = $data['aftercare'] ? 'checked="checked"' : '';?>
+			<input type="checkbox" value="yes" <?php echo $checked;?>name="camper[<?php echo $id;?>][aftercare]" id="aftercare-<?php echo $id;?>">
 			<label for="aftercare-<?php echo $id;?>">Yes, include aftercare.</label>
 		</td>
 	</tr>
