@@ -136,8 +136,8 @@ function br_submit_registration(){
 						$woocommerce->cart->add_to_cart( $aftercare );
 					}
 				 }
-				 
-				 wp_redirect( home_url('/review-pay') ); exit;
+				 do_action('show_br_form_data');
+				 //wp_redirect( home_url('/review-pay') ); exit;
 							
 		}
 	
