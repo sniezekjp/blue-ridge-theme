@@ -48,10 +48,10 @@
 		<td><textarea class="input-text" name="camper[<?php echo $id; ?>][medical]" id="" cols="30" rows="10"><?php echo $data['medical'] ? $data['medical'] : 'None'; ?></textarea></td>
 	</tr>
 	<tr>
-		<td>Needs after care from 2:30-3:30pm ($10)</td>
+		<td>Needs aftercare from 2:30-3:30pm ($10)</td>
 		<td>
-			<input type="checkbox" name"camper[<?php echo $id;?>][aftercare]" id="aftercare-<?php echo $id;?>">
-			<label for="aftercare-<?php echo $id;?>">Yes</label>
+			<input type="checkbox" value="yes" name"camper[<?php echo $id;?>][aftercare]" id="aftercare-<?php echo $id;?>">
+			<label for="aftercare-<?php echo $id;?>">Yes, include aftercare.</label>
 		</td>
 	</tr>
 	<tr>
