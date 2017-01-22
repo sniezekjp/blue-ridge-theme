@@ -111,7 +111,6 @@ function br_submit_registration(){
 				 	return; 
 				 
 				 foreach( $_POST['camper'] as $player ){
-				 	var_dump($player);
 					$isPrep = strpos($player['grade'], 'prep');
 					if($isPrep !== false) {
 						foreach($player['camp'] as $camp){
