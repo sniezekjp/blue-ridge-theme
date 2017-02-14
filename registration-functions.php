@@ -111,26 +111,18 @@ function br_submit_registration(){
 				 	return; 
 				 
 				 foreach( $_POST['camper'] as $player ){
-					$isPrep = strpos($player['grade'], 'prep');
-					if($isPrep !== false) {
-						foreach($player['camp'] as $camp){
-                            if(strpos($camp, 'prep') !== false) {
-                                $woocommerce->cart->add_to_cart($prep_fee);
-                            } else {
-                                $woocommerce->cart->add_to_cart( $upper_fee );
-                            }
-						}
-					}
-					else if( $player['grade'] >= 4){
-					 	foreach( $player['camp'] as $camp ){
-							 $woocommerce->cart->add_to_cart( $upper_fee ); 
-						}
-					 }
-					 else{
-					 	foreach( $player['camp'] as $camp ){
-							 $woocommerce->cart->add_to_cart( $lower_fee ); 
-						}						 
-					 }
+				 	foreach($player['camp'] as $camp) {
+				 		$isPrep = strpos($camp, 'prep');
+				 		if($isPrep !== false) {
+				 			$woocommerce->cart->add_to_cart( $prep_fee );
+				 		} else {
+				 			if($player['grade'] >= 4) {
+				 				$woocommerce->cart->add_to_cart( $upper_fee );
+				 			} else {
+				 				$woocommerce->cart->add_to_cart( $lower_fee );
+				 			}
+				 		}
+				 	}
 					if($player['aftercare']) {
 						$woocommerce->cart->add_to_cart( $aftercare );
 					}
